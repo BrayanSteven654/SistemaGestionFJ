@@ -14,12 +14,12 @@ def mostrar_menu():
 def main():
     registrar_evento("Iniciado el Sistema Integral de Gestión Software FJ.")
     print("¡Bienvenido al sistema del grupo!")
-    
+
     while True:
-        mostrar_menu()
-        opcion = input("\nSeleccione una opción: ")
-        
         try:
+            mostrar_menu()
+            opcion = input("\nSeleccione una opción: ")
+
             if opcion == "1":
                 print("\n[Módulo de Clientes - A cargo del Integrante 2]")
             elif opcion == "2":
@@ -27,13 +27,14 @@ def main():
             elif opcion == "3":
                 print("\n[Módulo de Reservas - A cargo del Integrante 4]")
             elif opcion == "4":
-                print("\n[Simulación de 10 Operaciones - A cargo del Líder]")
+                ejecutar_simulacion_10_operaciones()
             elif opcion == "5":
                 print("\nSaliendo del sistema... ¡Hasta pronto!")
                 registrar_evento("El sistema finalizó correctamente.")
                 break
             else:
                 print("\nOpción no válida. Intente de nuevo.")
+                
         except ErrorSistemaFJ as e:
             registrar_error(str(e))
             print(f"\n[Error Controlado]: {e}")
@@ -153,12 +154,4 @@ def ejecutar_simulacion_10_operaciones():
     print(f"Operaciones exitosas: {operaciones_exitosas}")
     print(f"Operaciones con excepciones controladas: {operaciones_fallidas}")
     print("="*50 + "\n")
-
-    from src.modelos.cliente import GestorClientes
-from src.excepciones.errores_personalizados import (
-    ServicioNoDisponibleError,
-    ReservaInvalidaError
-)
-
-elif opcion == "4":
-    ejecutar_simulacion_10_operaciones()
+   
