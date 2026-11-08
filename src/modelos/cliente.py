@@ -6,6 +6,7 @@
 # clientes.py
 from abc import ABC, abstractmethod
 import logging
+from src.modelos.entidad_base import Entidad
 
 logging.basicConfig(
     filename="logs.txt",
@@ -13,10 +14,8 @@ logging.basicConfig(
     format="%(asctime)s - %(levelname)s - %(message)s",
 )
 
-
 class ErrorCliente(Exception):
     pass
-
 
 class DatoInvalidoError(ErrorCliente):
     pass
