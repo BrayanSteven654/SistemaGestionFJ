@@ -154,4 +154,5 @@ def ejecutar_simulacion_10_operaciones():
     print(f"Operaciones exitosas: {operaciones_exitosas}")
     print(f"Operaciones con excepciones controladas: {operaciones_fallidas}")
     print("="*50 + "\n")
+
    
